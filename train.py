@@ -4,7 +4,8 @@ from model import GPTLanguageModel
 
 # Hyperparameters & Configuration
 batch_size = 64  # ANTES 32. Procesamos más ejemplos en paralelo
-block_size = 64  # ANTES 8. ¡Ahora el modelo puede mirar hasta 64 caracteres hacia atrás!
+block_size = 64  # ANTES 8. 
+
 max_iters = 5000
 eval_interval = 500
 eval_iters = 200
@@ -14,7 +15,7 @@ device = "cuda" if torch.cuda.is_available() else "cpu"
 # Reproducibility
 torch.manual_seed(1337)
 
-# AQUÍ ESTÁ EL CAMBIO CLAVE: Pasar block_size al modelo
+# Pasar block_size al modelo
 model = GPTLanguageModel(vocab_size, block_size)
 m = model.to(device)
 

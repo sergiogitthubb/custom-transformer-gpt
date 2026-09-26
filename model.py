@@ -73,7 +73,7 @@ class Block(nn.Module):
         self.ln2 = nn.LayerNorm(n_embd)
 
     def forward(self, x):
-        # LA MAGIA DE LA PROFUNDIDAD: Conexiones residuales (x = x + capa(norm(x)))
+        # Conexiones residuales (x = x + capa(norm(x)))
         x = x + self.sa(self.ln1(x))
         x = x + self.ffwd(self.ln2(x))
         return x

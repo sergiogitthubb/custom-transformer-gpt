@@ -6,7 +6,7 @@ import tiktoken
 # Dataset path
 DATA_PATH = "data/input.txt"
 def load_data():
-    # Asegúrate de que el archivo existe en esta ruta
+    # Make sure input.txt already exists in this path
     DATA_PATH = "data/input.txt" 
     with open(DATA_PATH, "r", encoding="utf-8") as f:
         text = f.read()
@@ -18,7 +18,7 @@ raw_text = load_data()
 # Instanciamos el tokenizador oficial de GPT-2
 enc = tiktoken.get_encoding("gpt2")
 
-# El tamaño del vocabulario da un salto enorme: de 65 a 50.257
+
 vocab_size = enc.n_vocab
 
 def encode(s: str) -> list[int]:

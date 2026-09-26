@@ -5,7 +5,7 @@ from datasets import load_dataset
 os.makedirs("data", exist_ok=True)
 archivo_salida = "data/input.txt"
 
-# Objetivo: 30 MB de texto (puedes subirlo a 50 o 100 si luego quieres más)
+# Objetivo: 30 MB de texto 
 TARGET_SIZE_MB = 30
 TARGET_SIZE_BYTES = TARGET_SIZE_MB * 1024 * 1024 
 
